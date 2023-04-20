@@ -26,21 +26,29 @@ function LoginForm({
   const isLogged = useSelector((state) => state.user.logged);
   const isLoading = useSelector((state) => state.user.loading);
 
-  const dispatch = useDispatch();
-
   // Utilisation des states pour la modale
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const dispatch = useDispatch();
+
   const handleSubmit = (evt) => {
+    // 1. gestion du comportement par défaut de la page
     evt.preventDefault();
+
+    // 2. On souscrit l'évênement à l'Action "login"
     dispatch(login());
+
+    // 3. fermeture de la modale après l'envoi du formulaire
     handleClose();
+
+    // 4. on redirige vers l'accueil après le "login"
     const path = '/';
     navigate(path);
   };
+
   const handleLogOut = () => {
     dispatch(logout());
     const path = '/';
