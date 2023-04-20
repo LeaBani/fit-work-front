@@ -75,7 +75,7 @@ function Profil() {
     if (id) getProfil();
   }, [id]);
 
-  /// Fonction pour modifier les informations de profil
+  // Fonction pour modifier les informations de profil
 
   /**
    * Cette fonction permet de vérifier lors de la modification d'un champ
