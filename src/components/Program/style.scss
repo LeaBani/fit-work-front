@@ -13,18 +13,46 @@
     }
 
     &-input{
-        color: vars.$dark;
-
-        &-article{
-            background-color: vars.$light;
-            display: flex;
-            align-items: center;
-        }
-        &-bin{
-            margin-right: 1rem;
+        &-icon{
+            margin-right: .5rem;
             color: vars.$primary;
     }
     }
+
+    .list-group-item{
+        display: inline-flex;
+        align-items: center;
+        background-color: vars.$light;
+        margin-bottom: .5rem;
+    }
+
+    @media (max-width: 600px) {
+        .program {
+            margin:1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        &-input{
+            &-icon{
+                color: vars.$light;
+                background-color: vars.$primary;
+            }
+            &-check{
+                position: absolute;
+                left: 7rem;
+            }
+        }
+        }
+
+        .list-group-item{
+            // display: inline-flex;
+            align-items: center;
+            background-color: vars.$light;
+            margin-bottom: .5rem;
+        }
+    }
+
 }
 
 .message-toast {

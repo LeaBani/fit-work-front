@@ -93,17 +93,13 @@ function App() {
           <Route
             path="/programme"
             element={(
-            isLogged
-              ? <Program />
-              : <Navigate to="/" replace />
+              <Program />
           )}
           />
           <Route
             path="/favoris"
             element={(
-            isLogged
-              ? <Favoris />
-              : <Navigate to="/" replace />
+              <Favoris />
           )}
           />
 

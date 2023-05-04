@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
@@ -82,15 +83,18 @@ function Article() {
 
       {!isLoading && (
 
-        <Card className="Article-center">
-          <Card.Header className="Article-type" as="h5">Type: {!article.type ? 'pas de type renseigné' : article.type}</Card.Header>
+        <Card className="Article-card">
+          <Card.Header className="Article-card-type" as="h5">Type: {!article.type ? 'pas de type renseigné' : article.type}</Card.Header>
           <Card.Body>
-            <Card.Title className="Article-title">{article.title}</Card.Title>
-            <Card.Img src={`${process.env.REACT_APP_BASE_URL}/article/${article.id}/image`} className="Article-image" />
-            <Card.Text className="Article-description">
+            <Card.Title className="Article-card-title">{article.title}</Card.Title>
+            <Card.Img src={`${process.env.REACT_APP_BASE_URL}article/${article.id}/image`} className="Article-card-image" />
+            <Card.Text className="Article-card-description">
               {article.description}
             </Card.Text>
-            <ButtonGroup className="Article-button" aria-label="Ajouter l'article">
+            <Card.Text className="Article-card-description">
+              Durée de l'activité : {!article.time ? 'à ta convenance !' : (!article.time.minutes ? `${article.time.seconds} seconde(s)` : `${article.time.minutes} minutes(s)`) }
+            </Card.Text>
+            <ButtonGroup className="Article-card-button" aria-label="Ajouter l'article">
               <Button
                 variant="light"
                 type="submit"

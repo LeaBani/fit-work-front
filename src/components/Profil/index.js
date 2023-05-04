@@ -200,8 +200,8 @@ function Profil() {
             Please provide a valid date.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button className="Profil-button" type="submit" onClick={updateProfil}>Modifier mes informations</Button>
       </Row>
+      <Button className="Profil-button" type="submit" onClick={updateProfil}>Modifier mes informations</Button>
     </Form>
   );
 }
