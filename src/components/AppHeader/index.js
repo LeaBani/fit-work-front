@@ -2,6 +2,7 @@ import './style.scss';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import Image from 'react-bootstrap/Image';
 import { Link, NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -32,11 +33,11 @@ function Header() {
       <Container>
         <Navbar.Brand>
           <Link to="/">
-            <img src={logo} className="header-logo" alt="Logo FitWork" />
+            <Image as={NavLink} eventKey="Image" src={logo} className="header-logo" alt="Logo FitWork" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" className="menu">
           <Nav className="me-auto" onSelect={(eventKey) => console.log(eventKey)}>
             {/* quand on est connecté ça affiche profil, programme, favoris, contact */}
             {isLogged && (
