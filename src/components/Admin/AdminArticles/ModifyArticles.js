@@ -51,13 +51,13 @@ export default function ModifyArticles({ articles, setArticles }) {
     <div className="card-modify">
       {articles.map((article) => (
         <div key={article.id}>
-          <Card className="card-modify_body" style={{ width: '18rem', height: '25rem' }}>
+          <Card className="card-modify_body" style={{ width: '18rem', height: '28rem' }}>
             <Card.Body>
               <Card.Title>{article.title}</Card.Title>
               <Card.Text className="Articles-card-description">
                 {article.description}
               </Card.Text>
-              <Card.Img className="card-modify_img" variant="top" src={`${process.env.REACT_APP_BASE_URL}/article/${article.id}/image`} />
+              <Card.Img className="card-modify_img" variant="top" src={`${process.env.REACT_APP_BASE_URL}article/${article.id}/image`} />
               <div className="card-modify_body_modif">
 
                 <ButtonGroup size="sm" className="card-modify_btn">

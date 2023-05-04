@@ -1,20 +1,15 @@
 @use 'src/styles/vars';
 
 .Article{
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
+    margin: 3rem;
+    padding-bottom: 3rem;
 
-    &-image{
-        width: 20rem;
-    }
-
-    &-center {
+    &-card{
         border: 10px solid;
         border-radius: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         border-color: vars.$danger;
-    }
+        margin-bottom: 4rem;
 
     &-type {
         display: flex;
@@ -25,6 +20,17 @@
         display: flex;
         justify-content: center;
     }
+
+    &-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
+
+}
+
+
+
 
 

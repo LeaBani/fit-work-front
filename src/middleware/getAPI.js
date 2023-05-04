@@ -6,6 +6,9 @@ import { CATEGORIES_FETCH, saveCategories } from '../actions/categories';
 
 export const instance = axios.create({
   baseURL: `${process.env.REACT_APP_BASE_URL}`,
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
 });
 
 const getAPI = (store) => (next) => async (action) => {
@@ -32,10 +35,10 @@ const getAPI = (store) => (next) => async (action) => {
           password,
         });
 
-        // ajout de l'authorisation dans les headers avec la doc axios
+        /*         // ajout de l'authorisation dans les headers avec la doc axios
         instance.defaults.headers.common.Authorization = (
           `Bearer ${response.data.token}`
-        );
+        ); */
 
         // Mémorisation du token dans le local storage
         localStorage.setItem('token', response.data.token);

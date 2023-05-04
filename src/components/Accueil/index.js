@@ -30,31 +30,34 @@ function Home() {
           </Page>
         )}
         { !isLogged && (
-        <div className="home-header">
-          <h1 className="home-title-big">
-            Un esprit sain, dans un corps sain !
-            <span className="home-title-small">
-              Pour travailler sainement.
-            </span>
-            <img src={logo2} alt="home-image" className="home-logo" />
-          </h1>
-        </div>
+          <Page>
+
+            <div className="home-header">
+              <h1 className="home-title-big">
+                Un esprit sain, dans un corps sain !
+                <span className="home-title-small">
+                  Pour travailler sainement.
+                </span>
+              </h1>
+              <img src={logo2} alt="home-image" className="home-logo" />
+              <p className="home-description">
+                L'application FitWork te suit au bureau !
+              </p>
+              <p className="home-description2">
+                Une application de conseils, d'exercices
+                physiques et relaxant, pour maintenir ton bien-être au travail.
+              </p>
+              <p className="home-description2">Découvre tous nos conseils bien-être en consultant les articles mis à disposition par nos coachs!</p>
+              <ArticleContainer />
+
+              <Button as={Link} to="/inscription" className="home-btn" variant="primary" size="lg">
+                Je m'inscris !
+              </Button>
+            </div>
+          </Page>
+
         )}
       </div>
-
-      <p className="home-description">
-        L'application FitWork te suit au bureau !
-      </p>
-      <p className="home-description2">
-        Une application de conseils, d'exercices
-        physiques et relaxant, pour maintenir ton bien-être au travail.
-      </p>
-      <p className="home-description2">Découvre tous nos conseils bien-être en consultant les articles mis à disposition par nos coachs!</p>
-      <ArticleContainer />
-
-      <Button as={Link} to="/inscription" className="home-btn" variant="primary" size="lg">
-        Je m'inscris !
-      </Button>
 
     </div>
   );

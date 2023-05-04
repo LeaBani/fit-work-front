@@ -18,10 +18,14 @@ import { getCategoriesList } from '../../selectors/categories';
 
 function Header() {
   const categories = useSelector(getCategoriesList);
+  console.log(categories);
+
   const isLogged = useSelector((state) => state.user.logged);
+  console.log(isLogged);
 
   // On récupère le role pour afficher la page Admin
-  const roleUser = useSelector((state) => state.user.role);
+  const roleUser = useSelector((state) => state.user.role_id);
+  console.log(roleUser);
 
   return (
     <Navbar expand="lg" className="sticky-top" bg="info" collapseOnSelect>
@@ -43,7 +47,7 @@ function Header() {
                 <NavDropdown title="Catégories" id="basic-nav-dropdown">
                   {categories.map((category) => (
                     <NavDropdown.Item
-                      eventKey="Categorie"
+                      eventKey={category.name}
                       as={NavLink}
                       key={category.id}
                       to={`/categorie/${category.id}`}
@@ -58,7 +62,7 @@ function Header() {
                 </NavDropdown>
                 <Nav.Link eventKey="Program" as={NavLink} to="/programme">Programme</Nav.Link>
                 <Nav.Link eventKey="Fav" as={NavLink} to="/favoris">Favoris</Nav.Link>
-                {roleUser === 'admin' && (
+                {roleUser === 1 && (
                 <Nav.Link eventKey="Admin" as={NavLink} to="/administrateur">Administrateur</Nav.Link>)}
 
               </>
@@ -72,10 +76,6 @@ function Header() {
                 <Nav.Item>
                   <Nav.Link eventKey="Contact" as={NavLink} to="/contact">Contact</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="About" as={NavLink} to="/a-propos">A propos</Nav.Link>
-                </Nav.Item>
-
               </>
             )}
           </Nav>

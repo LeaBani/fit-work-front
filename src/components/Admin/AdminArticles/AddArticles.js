@@ -67,19 +67,20 @@ function AddArticles({ articles, setArticles }) {
         category_id: selectCategory,
       })
       .then((response) => {
-        setSuccess(true)
-          .catch((error) => {
-            console.error(error);
-          });
-
+        setSuccess(true);
+        console.log(response);
         // ...articles deverse les informations marquées dans les inputs
         // (state => récupère de son parent la liste (index.js))
         // response.data correspond à l'article que l'on vient d'enregistrer en bdd
         // On irrigue le state avec le nouvel article pour mettre à jour le state
         const newArticles = [...articles, response.data];
         setArticles(newArticles);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   }
+
   return (
     <div className="containers">
       { !success && (
@@ -135,7 +136,7 @@ function AddArticles({ articles, setArticles }) {
           <img src={logo} className="Message-logo" alt="Logo inscription" />
           <Alert variant="dark">
             <div className="Message-alert">
-              <Alert.Heading>Super ! ton articles a été ajouté !</Alert.Heading>
+              <Alert.Heading>Super ! ton article a été ajouté !</Alert.Heading>
             </div>
           </Alert>
         </div>

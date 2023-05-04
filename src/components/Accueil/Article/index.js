@@ -47,7 +47,7 @@ function ArticleContainer() {
         {articles.slice(0, 4).map((article) => (
           <Carousel.Item className="card-article-inner" key={article.id}>
             <Card style={{ width: '18rem', height: '25rem' }}>
-              <Card.Img className="card-img" variant="light" src={`${process.env.REACT_APP_BASE_URL}/article/${article.id}/image`} />
+              <Card.Img className="card-img" variant="light" src={`${process.env.REACT_APP_BASE_URL}article/${article.id}/image`} />
               <Card.Body>
                 <Card.Title className="article-title">{article.title}</Card.Title>
                 <Card.Text className="card-description">

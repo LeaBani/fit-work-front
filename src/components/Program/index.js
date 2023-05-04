@@ -96,33 +96,32 @@ function Program() {
       <Form onSubmit={handleSubmit}>
         {articles.map((article) => (
           <ListGroup key={article.program_id}>
-            <div className="mb-3 program-input" key={article.program_id}>
-              <ListGroup.Item className="program-input-article">
-                <Button
-                  type="submit"
-                  variant="light"
-                  className="program-input-bin"
-                  onClick={() => deleteArticleProgram(article.program_id)}
-                >
-                  <Icon icon="bin" size="1rem" />
-                </Button>
-                <Button
-                  type="submit"
-                  variant="light"
-                  className="program-input-bin"
-                  as={NavLink}
-                  to={`/article/${article.article_id}`}
-                >
-                  <Icon icon="search" size="1rem" />
-                </Button>
-                <Form.Check
-                  key={article.id}
-                  label={article.title}
-                  onChange={() => toggleStatus(article)}
-                  checked={article.status}
-                />
-              </ListGroup.Item>
-            </div>
+            <ListGroup.Item key={article.program_id} className="list-group-item">
+              <Button
+                type="submit"
+                variant="light"
+                className="program-input-icon"
+                onClick={() => deleteArticleProgram(article.program_id)}
+              >
+                <Icon icon="bin" size="1rem" />
+              </Button>
+              <Button
+                type="submit"
+                variant="light"
+                className="program-input-icon"
+                as={NavLink}
+                to={`/article/${article.article_id}`}
+              >
+                <Icon icon="search" size="1rem" />
+              </Button>
+              <Form.Check
+                key={article.id}
+                label={article.title}
+                onChange={() => toggleStatus(article)}
+                checked={article.status}
+                className="program-input-check"
+              />
+            </ListGroup.Item>
           </ListGroup>
         ))}
         <Button

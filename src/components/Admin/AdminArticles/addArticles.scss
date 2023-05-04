@@ -4,17 +4,20 @@
 
 .form{
     text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
     &_input, &-btn{
         width: 50%;
     }
     &-title, &-description, &-img, &-thématique{
-        padding-bottom: 4vh;
+        padding-bottom: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
     &-btn{
-        margin-top: 2vh;
+        margin-top: 1rem;
     }
 }

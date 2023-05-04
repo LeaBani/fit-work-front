@@ -14,6 +14,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-bottom: 4rem;
     }
     &-card{
         display: flex;
@@ -26,6 +27,8 @@
         border-color: vars.$danger;
 
         &-title{
+            position: absolute;
+            bottom: 5rem;
             color: vars.$primary;
             font-size: large;
             font-weight: 800;
@@ -33,6 +36,9 @@
         }
 
         &-description{
+            position: absolute;
+            bottom: 3rem;
+            width: 15rem;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
